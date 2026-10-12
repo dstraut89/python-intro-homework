@@ -1,14 +1,15 @@
 # The error that I hit this week was this:
-# $ git commit -m "add warmup2.py"
-# On branch main
-# Your branch is up to date with 'origin/main'.
-#
-# Untracked files:
-#  (use "git add <file>..." to include in what will be committed)
-#        warmup3.py
-#
-# nothing added to commit but untracked files present (use "git add" to track)
-#
-#
-# What cause it was that I hadn't pushed yet, I was trying to gather all my files first.
-# I fixed it by going through the steps for each file one at a time : git add ... then git commit .... then git push.....
+# mup4.py", line 19, in <module>
+#    result = num1 + num2
+#             ~~~~~^~~~~~
+# TypeError: can only concatenate str (not "float") to str
+# 
+# It was caused by not telling the system what date type was being input by the user. By default, the input is seen as a string.
+# I fixed it by converting the input to a float in line 14 when doing the math "result = float(num1) + num2". I also had to convert the first input to a float as well.
+
+
+name = input("What is your name? ")
+num1 = input("Enter a number: ")
+num2 = float(input("Enter another number: "))
+result = float(num1) + num2
+print(f"Hello, {name}! The sum of {num1} and {num2} is {result}.")
