@@ -1,0 +1,4 @@
+print(not True and False)  # Logical Operators here are "Not" and "And." "Not" here inverts "true" which means this is false. And requires both conditions to be true, so the "not True" being false already breaks the "And", the "false" breaks the "and" again so the answer will be false.
+print(not (5 > 3))  # within the subparenthesis, 5 is greater than 3, so that is true. The "not" inverts that to false. This outputs false.
+print(10 == 10 and 4 != 4)  # Ten is equal to ten, so that is true. Four is equal to four so when the statement says it is not equal to four that is returned as false. The "and" requires both conditions to be true, so the answer will be false.
+print(not False or not True)  # "Or" requires only one of the conditions to be true. The first condition is "not False" which is true. Despite the second condition being false, the "or" only requires one of the conditions to be true, therefore the output will be true.
