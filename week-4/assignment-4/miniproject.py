@@ -30,17 +30,19 @@ ClassAve = classTotal / len(students)
 # printing the class average
 print(f"Class average: {ClassAve}")
 
+# create variable for subject set
 subjects = set()
-
+# for loop to find all offered subjects and save in the subjects set
 for student in students:
     subjects.add(student["subject"])
-
+# print subjects set
 print(f"Subjects offered: {subjects}")
+# create variable for high scorers list
 
 HScorers = []
-
+# for loop to determine who scored higher than 75 and saved in the high scorers list
 for student in students:
     if student["score"] > 75:
         HScorers.append(student["name"])
-
+# printing high scorers list
 print(f"High scorers: {HScorers}")
