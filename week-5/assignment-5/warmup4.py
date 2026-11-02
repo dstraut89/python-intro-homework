@@ -1,5 +1,5 @@
 for n in range(1,31):
-    if n % 3 == 0 & n % 5 == 0:
+    if n % 3 == 0 and n % 5 == 0:
         print("FizzBuzz")
     elif n % 3 == 0:
         print("Fizz")
