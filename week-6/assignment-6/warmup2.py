@@ -22,4 +22,4 @@ if scale == "F":
 else:
     rtrnd_temp = celsius_to_fahrenheit(temp)
 
-print(f"Did you know that {temp}°{scale} = {rtrnd_temp:.2f}°{NewScale}")
+print(f"Did you know that {temp}°{scale} = {rtrnd_temp:.1f}°{NewScale}")
