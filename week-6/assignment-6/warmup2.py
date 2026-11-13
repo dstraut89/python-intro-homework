@@ -1,7 +1,7 @@
-def CelsConv(t):
-    return(t - 32) * (5 / 9)
+def fahrenheit_to_celsius(f):
+    return(f - 32) * (5 / 9)
 
-def FahrConv(c):
+def celsius_to_fahrenheit(c):
     return(c * (9/5)) +  32
 
 def degreeScaleConv(d):
@@ -17,9 +17,9 @@ temp = float(input("What is the temperature outside today in your area?((Ex: 55.
 NewScale = degreeScaleConv(scale)
 
 if scale == "F":
-    rtrnd_temp = CelsConv(temp)
+    rtrnd_temp = fahrenheit_to_celsius(temp)
 
 else:
-    rtrnd_temp = FahrConv(temp)
+    rtrnd_temp = celsius_to_fahrenheit(temp)
 
 print(f"Did you know that {temp}°{scale} = {rtrnd_temp:.2f}°{NewScale}")

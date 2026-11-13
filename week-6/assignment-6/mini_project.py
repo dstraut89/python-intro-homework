@@ -24,14 +24,15 @@ def search(lst, trgt):
     return -1
 
 def bubble_sort(lst):
-    newlist = lst
+    newlist = lst.copy()
     sorting = True
     while sorting:
         sorting = False
-        for i in range(len(newlist)):
+        for i in range(len(newlist)-1):
             if newlist[i] > newlist[i + 1]:
                 newlist[i], newlist[i + 1] = newlist[i + 1], newlist[i]
                 sorting = True
+
     return newlist
 
 def show_menu():

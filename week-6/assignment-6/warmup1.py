@@ -1,14 +1,5 @@
-def salutation1(name):
-    print("Hello, " + name + ", it's nice to meet you.")
-
-def salutation2(name="Guest_Player"):
-    if name != "Guest_Player":
-        print(f"Hello, {name}! Welcome back. Would you like to continue where you left off?")
-    else:
-        print(f"Hello, {name}! Are you ready for a fun day with python?")
-
-def salutation3(name, grtng):
-    print(f"Hello {name}, {grtng}")
+def salutation(name="Guest Player", greeting="How are you doing today?"):
+    print(f"{greeting}, {name}!")
 
 def greet_by_letter(name):
     if name[0].lower() <= "d":
@@ -25,14 +16,14 @@ def greet_by_letter(name):
         return("What have you been up to?")
     elif "x" < name[0].lower() <= "z":
         return("How are things on your end?")
+    else:
+        return("Look who it is!")
 
-name = input("What is your name?: ")
-
-if name == "":
-    salutation2()
-elif name[-1].lower() <= "i":
-    salutation1(name)
-elif name[-1].lower() <= "r":
-    salutation2(name)
-else:
-    salutation3(name, greet_by_letter(name))
+while True:
+    name = input("What is your name?: ")
+    if name == "":
+        salutation()
+    else:
+        salutation(name)
+        salutation(name, greet_by_letter(name))
+        salutation(name, greeting="Glad to connect")
