@@ -1,4 +1,4 @@
-def salutation(name="Guest Player", greeting="How are you doing today?"):
+def salutation(name="Guest Player", greeting="Hello"):
     print(f"{greeting}, {name}!")
 
 def greet_by_letter(name):
