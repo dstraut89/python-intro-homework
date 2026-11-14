@@ -4,9 +4,9 @@ def is_valid_score(score):
     else:
         return(False)
 
-Result = int(input("What is the student's score?: "))
+result = int(input("What is the student's score?: "))
 
-validity_check = is_valid_score(Result)
+validity_check = is_valid_score(result)
 
 if validity_check:
     print("That is a valid score")

@@ -1,9 +1,9 @@
-def Email():
-    Host = "webmail.com"
-    return Host
+def email():
+    host = "webmail.com"
+    return host
 # NameError: name 'Host' is not defined
 
-address = Email()
+address = email()
 print("d_man@" + address)
 # print(Host)
 
