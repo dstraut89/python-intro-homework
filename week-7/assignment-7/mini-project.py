@@ -23,8 +23,8 @@ if os.path.exists(f'{path}'):
     workfile = bool_workfile(workfile)
 
 
-    if workfile == True:
-        with open('week-7/data/expenses.csv', 'r') as file:
+    if workfile:
+        with open(f'{path}', 'r') as file:
             expense = list(csv.DictReader(file))
             for item in expense:
                 item['amount'] = float(item['amount'])
@@ -33,29 +33,16 @@ if os.path.exists(f'{path}'):
             foodcollector_body = []
             for row in foodcollector:
                 foodcollector_body += [f"{row['date']}: ${row['amount']:.2f}"]
-                body = "\n".join(foodcollector_body)
+            
+            body = "\n".join(foodcollector_body)
 
             total = sum(item['amount'] for item in foodcollector)
             
             now = datetime.now()
             
-            with open('Food_report.txt', 'w') as file:
-                file.write(f"Food Expense Report - generated {now.strftime('%B %d, %Y')}\n{body}\n     Total: ${total}")
-                print('Food_report.txt')
+            with open('food_report.txt', 'w') as file:
+                file.write(f"Food Expense Report - generated {now.strftime('%B %d, %Y')}\n{body}\n     Total: ${total:.2f}")
+                print('food_report.txt')
 
 else:
     print("expenses.csv not found.")
-
-
-
-'''
-##### 1) Use os.path.exists() to verify that ../data/expenses.csv exists before opening it. If it doesn't, print an error message and stop.
-##### 2) Read ../data/expenses.csv into a list of dictionaries using csv.DictReader.
-3) Convert the amount field to float for each row.
-4) Filter the list to only rows where category is "Food".
-5) Calculate the total amount spent on Food.
-6) Write a report to food_report.txt with this structure:
-        - First line: Food Expense Report — generated [today's date as "Month DD, YYYY"]
-        - One line per food expense: [date]: $[amount]
-        - Last line: Total: $[total to 2 decimal places]
-'''
