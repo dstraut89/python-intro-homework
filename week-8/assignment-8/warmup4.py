@@ -5,5 +5,4 @@
 # urllib3==2.8.0
 
 import requests
-
 print(f"requests version: {requests.__version__}")
